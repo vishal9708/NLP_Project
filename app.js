@@ -1,13 +1,39 @@
 const button1 = document.getElementById('button1');
 const button2 = document.getElementById('button2');
 
+var actual_text_length;
+var result_text_length;
+
+function word_count(text)
+{
+	var count = 0;
+
+	for (var i = 0; i < text.length; i++) {
+		var currentCharacter = text[i];
+
+		if (currentCharacter == " ") {
+			count += 1;
+		}
+	}
+	count += 1;
+  return count;
+}
+
+
 button1.addEventListener('click', async (event)=>{
 	event.preventDefault();
 
 	const textCorpus = document.getElementById('TextArea').value;
+
+	actual_text_length = word_count(textCorpus);
+
     const element = document.getElementById('content');
 	summarize(textCorpus).then((response)=>{
-		element.innerText = JSON.stringify(response);
+		var str = JSON.stringify(response);
+		element.innerText = str;
+
+		result_text_length = word_count(str);
+		const element = document.getElementById('')
 	})
 });
 
