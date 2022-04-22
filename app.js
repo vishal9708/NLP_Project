@@ -1,3 +1,5 @@
+//import './badge'
+
 const button1 = document.getElementById('button1');
 const button2 = document.getElementById('button2');
 
@@ -33,7 +35,11 @@ button1.addEventListener('click', async (event)=>{
 		element.innerText = str;
 
 		result_text_length = word_count(str);
-		const element = document.getElementById('')
+		
+	  
+		let display_badge = `Well done! Your original text contains ${actual_text_length} words while the reduced summary contains only ${result_text_length} words`;
+		const compareBox = document.getElementById('compare');
+		compareBox.innerText = display_badge
 	})
 });
 
