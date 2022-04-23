@@ -44,7 +44,6 @@ button1.addEventListener('click', async (event)=>{
 });
 
 button2.addEventListener('click', async (event)=>{
-	event.preventDefault();
 
 	const textCorpus = document.getElementById('TextArea').value;
     const element = document.getElementById('content');
